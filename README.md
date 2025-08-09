@@ -1,22 +1,30 @@
-# C++ Complex Fourier Series Visualizer/SVG Compiler  .version 1.0
+# C++ Terminal & Graphical 3D Engine with Raycasting  .v1.0
+
 ## Project Explanation
-In simple terms, this project has two modes:
-- Compiler: Takes SVG files, and compiles them into a **Spirograph**.
-- Viewer: Takes that **Spirograph**, animates it, and displays it through a sfml GUI.
 
-**For Further Studies**, I have a video from YouTube by famous mathematics content creator [@3blue1brown](https://www.youtube.com/@3blue1brown) that explains everything about this project, including what it is, how it works, the math/logic behind it, and all that such. This is also the video from which I got my inspiration.
-### - >[But what is a Fourier series? From heat flow to drawing with circles | DE4](https://www.youtube.com/watch?v=r6sGWTCMz2k&list=PLZHQObOWTQDN52m7Y21ePrTbvXkPaWVSg)
-##  How to use
-Note: all following instructions are designed for Linux systems, if you are using other systems, please only use them as a reference, as the process might be similar
-- Make sure you have `sfml`(gui support) and `tinyxml2`(raw info extract) installed.
-- In the same folder with the executable file `fourierDrawer`, run the commands:
-  - To compile, run `./fourierDrawer c <svg/file/path.svg>`, then at the same folder of the SVG file, a `.dc` file designed to store spirograph should be generated, named by adding `.dc` to the SVG file name.
-  - To animate the compiled spirograph, run `./fourierDrawer o <spirograph/file/path.svg.dc>`, then expect a GUI!
-## Source File Dependencies
-- Spirograph animation/GUI control: [C++ Spirograph Visualizer .version 1.0](https://github.com/tonystdeng/cpp-spirograph-visualizer)
-- SVG file information extraction: [C++ Scalable Vector Graphics utilities library .version 1.0](https://github.com/tonystdeng/cpp-svg-utility)
+Its a simple 3D engine coded in C++ that renders 3D graphic by the raycasting algorithm that works in **Linux & MacOS**.
 
-(they are all made by me btw)
- 
+It works in both **Terminal and GUI** with fluid animation and takes keyboard input for movement.
+
+## How to use
+
+**Map Management**
+
+This application reads a **CSV** file to load a virtual 2D world for you to explore.
+
+- Run `./initMap.py` to recieve a blank **8 x 8** world as a CSV file to edit.
+
+- You need to always make sure that there is a file named `map.csv` in the same folder as the application for it to work.
+
+- To add walls in your virtual world, simply change 0 to 1 in the CSV file. Feel free to extend the world also.
+
+**Run App** 
+
+- Make sure you have `sfml`(gui support) installed.
+- In the same folder with the executable file `raycast`, make sure you have `map.csv` as mentioned in **Map Management**
+- Run `./raycast`  in terminal for sfml supported GUI
+- Run `./raycast -t`  instead for in terminal graphic
+
 ## Licence
+
 This project is licensed under the GPL License - see the [LICENCE](LICENCE.txt) file for details.
