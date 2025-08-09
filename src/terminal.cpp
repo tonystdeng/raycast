@@ -2,6 +2,8 @@
 
 
 bool Main::terminalMain() {
+    auto frameStart = std::chrono::steady_clock::now();
+
     int maxH = 24; // height of graphic in terminal in unit of char
     int hmaxH = maxH / 2;
     std::vector<std::pair<float, int>> rectangles = tdLoader(maxH);// load three-d
@@ -35,8 +37,16 @@ bool Main::terminalMain() {
         }std::cout << '\n';
     }
     
-    terminalInput();
+    sfmlInput();
 
+        // --- End render ---
+    auto frameEnd = std::chrono::steady_clock::now();
+    auto workTime = frameEnd - frameStart;
+
+    // Sleep if frame rendered too quickly
+    if (workTime < frameDuration) {
+        std::this_thread::sleep_for(frameDuration - workTime);
+    }
     return true;
 }
 

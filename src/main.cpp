@@ -6,7 +6,7 @@ Main::Main(std::string type) {
         // init window
         wSize = sf::VideoMode({1600, 800});
         window = new sf::RenderWindow(wSize, "Raycaster");
-        window->setFramerateLimit(60);
+        window->setFramerateLimit(targetFPS);
         rate = 0.1;
     }
     else if (type == "terminal") {

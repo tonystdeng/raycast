@@ -12,6 +12,8 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <termios.h>
+#include <thread>
+#include <chrono>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -24,6 +26,8 @@ const int msr = 15;
 const int hmsr = msr / 2;
 //msr=map size rate, scaling map is nessary for player to walk free
 
+const int targetFPS = 30;
+const auto frameDuration = std::chrono::milliseconds(1000 / targetFPS);
 
 
 const sf::Keyboard::Scancode keys[] = {
