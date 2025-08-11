@@ -12,7 +12,7 @@ It works in both **Terminal and GUI** with fluid animation and takes keyboard in
 
 This application reads a **CSV** file to load a virtual 2D world for you to explore.
 
-- Run simple script `./initMap.py`(with python and pandas installed) to recieve a blank **8 x 8** world as a CSV file to edit.
+- Run simple script `./initMap.py`(with python and pandas installed) to recieve a blank **8 x 8** world as a CSV file to edit, or use the default map avalible.
 - You need to always make sure that there is a file named `map.csv` in the same folder as the application for it to work.
 - To add walls in your virtual world, simply change 0 to 1 in the CSV file. Feel free to extend the world also.
 
