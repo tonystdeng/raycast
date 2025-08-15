@@ -15,10 +15,6 @@ Main::Main(std::string type) {
 
     Map = getMap();         
     Map = scaleMap(Map);
-    size.x = Map.size();    
-    size.y = Map[0].size();  
-    pos.x = size.x / 2;     
-    pos.y = size.y / 2;  
 }
 
 

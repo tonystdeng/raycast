@@ -14,9 +14,7 @@
 #include <termios.h>
 #include <thread>
 #include <chrono>
-
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
+#include <sstream>
 
 
 typedef std::vector<int> mapLine;
@@ -30,22 +28,11 @@ const int targetFPS = 30;
 const auto frameDuration = std::chrono::milliseconds(1000 / targetFPS);
 
 
-const sf::Keyboard::Scancode keys[] = {
-    sf::Keyboard::Scan::W,
-    sf::Keyboard::Scan::D,
-    sf::Keyboard::Scan::S,
-    sf::Keyboard::Scan::A
-};
-
-
 class Main
 {
 private:
     float range = 60; // how wide is the view (fov in minecraft)
     float rate; // how detailed is the view
-
-    sf::RenderWindow *window;
-    sf::VideoMode wSize;
 
     int angle = 0;
     map Map;
@@ -56,10 +43,6 @@ private:
 public:
     Main(std::string);// Constructor 
     
-    bool sfmlMain(); 
-    void sfmlInput(float speed = 1);
-    // sfmlDisplay.cpp
-
     bool terminalMain();
     void terminalInput(float speed = 1);
     // terminal.cpp
